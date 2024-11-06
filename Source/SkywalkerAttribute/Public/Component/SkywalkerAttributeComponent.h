@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+
+#include "AttributeSet/SkywalkerAttributeSet.h"
+
 #include "SkywalkerAttributeComponent.generated.h"
 
 UCLASS(ClassGroup = Skywalker, hidecategories = (Object, LOD, Lighting, Transform, Sockets, TextureStreaming), editinlinenew, meta = (BlueprintSpawnableComponent))
@@ -22,4 +25,11 @@ protected:
 public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+
+public:
+	/**
+	 * USkywalkerAttributeSet Class Array
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AttributeSetClass")
+	TArray<TSubclassOf<USkywalkerAttributeSet>> AttributeSetClassArray;
 };

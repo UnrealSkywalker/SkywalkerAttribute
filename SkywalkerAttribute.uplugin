@@ -19,6 +19,11 @@
 			"Name": "SkywalkerAttribute",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "SkywalkerAttributeEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
 		}
 	]
 }

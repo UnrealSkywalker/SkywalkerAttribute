@@ -17,22 +17,7 @@ void USkywalkerAttributeComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// 获取 AbilitySystemComponent，并绑定 AttributeSet
-	if (GetOwner())
-	{
-		AbilitySystemComponent = Cast<UAbilitySystemComponent>(GetOwner()->GetComponentByClass(UAbilitySystemComponent::StaticClass()));
-		if (AbilitySystemComponent)
-		{
-			for (TSubclassOf<USkywalkerAttributeSet> AttributeSetClass : AttributeSetClassArray)
-			{
-				USkywalkerAttributeSet *AttributeSet = NewObject<USkywalkerAttributeSet>(GetOwner(), AttributeSetClass);
-				if (AttributeSet)
-				{
-					AbilitySystemComponent->InitStats(AttributeSet);
-				}
-			}
-		}
-	}
+	// ...
 }
 
 // Called every frame

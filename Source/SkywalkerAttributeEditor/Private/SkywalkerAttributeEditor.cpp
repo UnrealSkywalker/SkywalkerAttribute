@@ -14,9 +14,9 @@ void FSkywalkerAttributeEditorModule::StartupModule()
 	// Register custom asset category
 	SkywalkerAssetCategoryBit = AssetTools.RegisterAdvancedAssetCategory(FName(TEXT("Skywalker")), LOCTEXT("SkywalkerCategory", "Skywalker"));
 
-	// Register asset type actions
-	SkywalkerAttributeAssetAction = MakeShared<FAssetTypeActions_SkywalkerAttributeAsset>(SkywalkerAssetCategoryBit);
-	AssetTools.RegisterAssetTypeActions(SkywalkerAttributeAssetAction.ToSharedRef());
+	// // Register asset type actions
+	// SkywalkerAttributeAssetAction = MakeShared<FAssetTypeActions_SkywalkerAttributeAsset>(SkywalkerAssetCategoryBit);
+	// AssetTools.RegisterAssetTypeActions(SkywalkerAttributeAssetAction.ToSharedRef());
 }
 
 void FSkywalkerAttributeEditorModule::ShutdownModule()
@@ -26,11 +26,11 @@ void FSkywalkerAttributeEditorModule::ShutdownModule()
 		FAssetToolsModule &AssetToolsModule = FAssetToolsModule::GetModule();
 		IAssetTools &AssetTools = AssetToolsModule.Get();
 
-		// Unregister asset type actions
-		if (SkywalkerAttributeAssetAction.IsValid())
-		{
-			AssetTools.UnregisterAssetTypeActions(SkywalkerAttributeAssetAction.ToSharedRef());
-		}
+		// // Unregister asset type actions
+		// if (SkywalkerAttributeAssetAction.IsValid())
+		// {
+		// 	AssetTools.UnregisterAssetTypeActions(SkywalkerAttributeAssetAction.ToSharedRef());
+		// }
 	}
 }
 
